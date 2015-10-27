@@ -35,4 +35,6 @@ chirpApp.factory('UserService', function UserService($http, $location) {
     factory.authenticated = false;
     factory.current_user = '';
   };
+
+  return factory;
 });
