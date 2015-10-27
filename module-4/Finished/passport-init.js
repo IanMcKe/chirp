@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 var mongoose = require('mongoose');
+=======
+var mongoose = require('mongoose');   
+>>>>>>> upstream/master
 var User = mongoose.model('User');
 var LocalStrategy   = require('passport-local').Strategy;
 var bCrypt = require('bcrypt-nodejs');
@@ -21,9 +25,15 @@ module.exports = function(passport){
 	passport.use('login', new LocalStrategy({
 			passReqToCallback : true
 		},
+<<<<<<< HEAD
 		function(req, username, password, done) {
 			// check in mongo if a user with username exists or not
 			User.findOne({ 'username' :  username },
+=======
+		function(req, username, password, done) { 
+			// check in mongo if a user with username exists or not
+			User.findOne({ 'username' :  username }, 
+>>>>>>> upstream/master
 				function(err, user) {
 					// In case of any error, return using the done method
 					if (err)
@@ -31,9 +41,15 @@ module.exports = function(passport){
 					// Username does not exist, log the error and redirect back
 					if (!user){
 						console.log('User Not Found with username '+username);
+<<<<<<< HEAD
 						return done(null, false);
 					}
 					// User exists but wrong password, log the error
+=======
+						return done(null, false);                 
+					}
+					// User exists but wrong password, log the error 
+>>>>>>> upstream/master
 					if (!isValidPassword(user, password)){
 						console.log('Invalid Password');
 						return done(null, false); // redirect back to login page
@@ -73,17 +89,28 @@ module.exports = function(passport){
 					// save the user
 					newUser.save(function(err) {
 						if (err){
+<<<<<<< HEAD
 							console.log('Error in Saving user: '+err);
 							throw err;
 						}
 						console.log(newUser.username + ' Registration succesful');
+=======
+							console.log('Error in Saving user: '+err);  
+							throw err;  
+						}
+						console.log(newUser.username + ' Registration succesful');    
+>>>>>>> upstream/master
 						return done(null, newUser);
 					});
 				}
 			});
 		})
 	);
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> upstream/master
 	var isValidPassword = function(user, password){
 		return bCrypt.compareSync(password, user.password);
 	};

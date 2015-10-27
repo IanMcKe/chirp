@@ -24,7 +24,11 @@ a {
 
 .odd {
 	background-color: #f2f9ff;
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> upstream/master
 }
 .even {
 	background-color: #eceff3;
@@ -34,4 +38,8 @@ a {
 	max-width: 330px;
 	padding: 5px;
 	margin: 0 auto;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> upstream/master
