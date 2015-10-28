@@ -14,6 +14,7 @@ chirpApp.factory('UserService', function UserService($http, $location) {
         $location.path('/');
       } else {
         factory.error_message = data.message;
+        console.log(factory.error_message);
       }
     });
   };
@@ -26,6 +27,7 @@ chirpApp.factory('UserService', function UserService($http, $location) {
         $location.path('/');
       } else {
         factory.error_message = data.message;
+        console.log(factory.error_message);
       }
     });
   };

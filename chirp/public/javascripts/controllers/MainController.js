@@ -2,7 +2,7 @@ chirpApp.controller('MainController', function MainController(PostService, UserS
   var vm = this;
   vm.posts = PostService.query();
   vm.newPost = {created_by: '', text: '', created_at: ''};
-  vm.authenticated = UserService.authenticated;
+  vm.UserService = UserService;
 
   vm.post = function() {
     vm.newPost.created_by = UserService.current_user;
